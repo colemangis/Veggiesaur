@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vegan Recipe Generator</title>
+</head>
+<body>
+    <h2>Vegan Recipe Generator</h2>
+    <form method="post" action="/">
+        <label for="ingredients">Enter Ingredients:</label><br>
+        <input type="text" id="ingredients" name="ingredients" placeholder="Tomatoes, Spinach, Onions..."><br><br>
+        <input type="submit" value="Get Recipe">
+    </form>
+    {% if recipe %}
+        <h3>Recipe:</h3>
+        <p>{{ recipe }}</p>
+    {% endif %}
+</body>
+</html>
