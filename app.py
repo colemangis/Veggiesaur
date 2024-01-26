@@ -27,13 +27,13 @@ def get_vegan_recipe(ingredients):
     prompt_text = f"Create a detailed vegan recipe that includes the following ingredients: {ingredients}. The recipe should be easy to follow and include steps for preparation and cooking."
 
     data = {
-        'model': 'text-davinci-003',
+        'engine': 'davinci',  # Specify the engine instead of model
         'prompt': prompt_text,
         'temperature': 0.7,
-        'max_tokens': 500
+        'max_tokens': 800  # Adjust max_tokens if needed
     }
 
-    response = requests.post('https://api.openai.com/v1/engines/davinci/completions', headers=headers, json=data)
+    response = requests.post('https://api.openai.com/v1/completions', headers=headers, json=data)
     logging.info(f"Request data: {data}")
     logging.info(f"Response status code: {response.status_code}")
     logging.info(f"Response data: {response.json()}")
